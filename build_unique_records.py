@@ -42,7 +42,7 @@ if __name__ == '__main__':
         keys = list(files.keys())
     print(len(keys)) 
      
-    pool = mp.Pool(processes=14)
+    pool = mp.Pool(processes=os.cpu_count())
     pool.map(function, keys)
 
 

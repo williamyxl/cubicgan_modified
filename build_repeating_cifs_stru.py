@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
     keys = list(d.keys())
 
-    pool = mp.Pool(processes=6)
+    pool = mp.Pool(processes=os.cpu_count())
     results = [pool.apply_async(base, args=(k,)) for k in keys]
     cnt = 0
     ans = {}

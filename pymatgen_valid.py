@@ -76,6 +76,6 @@ def process(cif):
         pass
 
 
-pool = mp.Pool(processes=18)
+pool = mp.Pool(processes=os.cpu_count())
 pool.map(process, gen_cifs)
 pool.close()

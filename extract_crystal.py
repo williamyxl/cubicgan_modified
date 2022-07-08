@@ -64,7 +64,7 @@ def function(file):
         return a,b
 
 
-pool = mp.Pool(processes=24)
+pool = mp.Pool(processes=os.cpu_count())
 results = [pool.apply_async(function, args=(file,)) for file in valid_files]
 
 d = {}
